@@ -40,7 +40,7 @@ const data = [
         name: "Juan",
         level: "hight",
     },
-  ];
+];
 
 const rta1 = data
     .map(item => item.level)
