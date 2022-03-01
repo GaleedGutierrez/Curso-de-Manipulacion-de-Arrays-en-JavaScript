@@ -1,12 +1,12 @@
 const matriz = 
 [
-    [1, 2, 3],
-    [4, 5, 6, [1, 2]],
-    [7, 8, 9],
+    [['a', 'b'],1, 2, 3],
+    [4, 5, 6, [1, 2, [3, 4]]],
+    [7, 8, 9, ['a', 'b']],
 ];
 
 
-const newArray = [];
+// const newArray = [];
 // for (let i = 0; i < matriz.length; i++) {
 //     const iElement = matriz[i];
 
@@ -26,23 +26,19 @@ const newArray = [];
 //     }
 // }
 
-function flatFunction (array) {
-    debugger
+function flatFunction (element) {
     let newArray = [];
-    let aux = [];
-    for (const item of array) {
-        debugger
-        const isElementArray = Object.prototype.toString.call(item) === '[object Array]';
-        if (isElementArray) {
-            aux = newArray.concat(flatFunction(item))
-            newArray = [...aux];
-        } else {
-            return array
-        }
+    const isElementArray = Object.prototype.toString.call(element) === '[object Array]';
+    if (!isElementArray) return element;  
+    for (const item of element) {
+        newArray = newArray.concat(flatFunction(item));
     }
     return newArray;
 }
 
-console.log(flatFunction(matriz));
+// console.log(flatFunction(matriz));
 
 // console.log('for', newArray);
+const rta = matriz.flat(3);
+console.log('flat', rta);
+
