@@ -67,7 +67,7 @@ console.log('productsV2', productsV2);
 
 // Reto 2: Hacer una modificación como la de arriba, en update, sin modificar el array original.
 const newArrayProductV2 = productsV2.map(addChanges(item));
-console.log({newArrayProductV2});
+// console.log({newArrayProductV2});
 
 function addChanges (item) {
     let newItem = {...item};
